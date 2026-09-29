@@ -1,0 +1,254 @@
+{
+  "team": "PGD (PlerngDoiGun)",
+  "team_code": "032-034-038",
+  "members": [
+    [
+      "032",
+      "รมิดา แจ่มจํารัส"
+    ],
+    [
+      "034",
+      "รัตนาภรณ์ ธรรมนู"
+    ],
+    [
+      "038",
+      "วิศรุต อินโต"
+    ]
+  ],
+  "project": "ทำนายการยกเลิกการจองโรงแรม (Hotel Booking Cancellation)",
+  "model": "RandomForestClassifier(n_estimators=60, max_depth=12, min_samples_leaf=3, random_state=42)",
+  "features": [
+    "lead_time",
+    "arrival_date_day_of_month",
+    "total_of_special_requests",
+    "deposit_type_Non Refund",
+    "customer_type_Group",
+    "market_segment_Corporate",
+    "market_segment_Online TA",
+    "arrival_date_month_December",
+    "arrival_date_month_July",
+    "arrival_date_month_May",
+    "distribution_channel_GDS",
+    "reserved_room_type_D",
+    "assigned_room_type_B",
+    "assigned_room_type_D",
+    "assigned_room_type_F",
+    "assigned_room_type_H",
+    "adr",
+    "previous_cancellations",
+    "booking_changes",
+    "stays_in_week_nights",
+    "stays_in_weekend_nights",
+    "adults"
+  ],
+  "features_ga": [
+    "lead_time",
+    "arrival_date_day_of_month",
+    "total_of_special_requests",
+    "deposit_type_Non Refund",
+    "customer_type_Group",
+    "market_segment_Corporate",
+    "market_segment_Online TA",
+    "arrival_date_month_December",
+    "arrival_date_month_July",
+    "arrival_date_month_May",
+    "distribution_channel_GDS",
+    "reserved_room_type_D",
+    "assigned_room_type_B",
+    "assigned_room_type_D",
+    "assigned_room_type_F",
+    "assigned_room_type_H"
+  ],
+  "features_extra": [
+    "adr",
+    "previous_cancellations",
+    "booking_changes",
+    "stays_in_week_nights",
+    "stays_in_weekend_nights",
+    "adults"
+  ],
+  "feature_meta": {
+    "lead_time": {
+      "kind": "number",
+      "label": "ระยะเวลาจองล่วงหน้า (วัน)",
+      "min": 0,
+      "max": 800,
+      "default": 60,
+      "help": "จำนวนวันตั้งแต่จองถึงวันเข้าพัก"
+    },
+    "arrival_date_day_of_month": {
+      "kind": "number",
+      "label": "วันที่เข้าพัก (วันที่ของเดือน)",
+      "min": 1,
+      "max": 31,
+      "default": 15,
+      "help": "วันที่ของเดือนที่เข้าพัก"
+    },
+    "total_of_special_requests": {
+      "kind": "number",
+      "label": "จำนวนคำขอพิเศษทั้งหมด",
+      "min": 0,
+      "max": 10,
+      "default": 1,
+      "help": "เช่น ขอเตียงใหญ่ ชั้นสูง ห้องเงียบ"
+    },
+    "deposit_type_Non Refund": {
+      "kind": "binary",
+      "option": "type_Non Refund",
+      "default": 0
+    },
+    "customer_type_Group": {
+      "kind": "binary",
+      "option": "type_Group",
+      "default": 0
+    },
+    "market_segment_Corporate": {
+      "kind": "binary",
+      "option": "segment_Corporate",
+      "default": 0
+    },
+    "market_segment_Online TA": {
+      "kind": "binary",
+      "option": "segment_Online TA",
+      "default": 0
+    },
+    "arrival_date_month_December": {
+      "kind": "binary",
+      "option": "date_month_December",
+      "default": 0
+    },
+    "arrival_date_month_July": {
+      "kind": "binary",
+      "option": "date_month_July",
+      "default": 0
+    },
+    "arrival_date_month_May": {
+      "kind": "binary",
+      "option": "date_month_May",
+      "default": 0
+    },
+    "distribution_channel_GDS": {
+      "kind": "binary",
+      "option": "channel_GDS",
+      "default": 0
+    },
+    "reserved_room_type_D": {
+      "kind": "binary",
+      "option": "room_type_D",
+      "default": 0
+    },
+    "assigned_room_type_B": {
+      "kind": "binary",
+      "option": "room_type_B",
+      "default": 0
+    },
+    "assigned_room_type_D": {
+      "kind": "binary",
+      "option": "room_type_D",
+      "default": 0
+    },
+    "assigned_room_type_F": {
+      "kind": "binary",
+      "option": "room_type_F",
+      "default": 0
+    },
+    "assigned_room_type_H": {
+      "kind": "binary",
+      "option": "room_type_H",
+      "default": 0
+    },
+    "adr": {
+      "kind": "number",
+      "label": "ราคาห้องเฉลี่ยต่อคืน (ADR)",
+      "min": 0,
+      "max": 600,
+      "default": 100,
+      "help": "Average Daily Rate หน่วยเป็นเงิน"
+    },
+    "previous_cancellations": {
+      "kind": "number",
+      "label": "จำนวนครั้งที่เคยยกเลิกก่อนหน้า",
+      "min": 0,
+      "max": 30,
+      "default": 0,
+      "help": "ประวัติยกเลิกการจองของลูกค้ารายนี้"
+    },
+    "booking_changes": {
+      "kind": "number",
+      "label": "จำนวนครั้งที่แก้ไขการจอง",
+      "min": 0,
+      "max": 20,
+      "default": 0,
+      "help": "จำนวนครั้งที่เปลี่ยนวัน/ห้อง/จำนวนคน"
+    },
+    "stays_in_week_nights": {
+      "kind": "number",
+      "label": "จำนวนคืนวันธรรมดา (จ.–ศ.)",
+      "min": 0,
+      "max": 30,
+      "default": 2,
+      "help": ""
+    },
+    "stays_in_weekend_nights": {
+      "kind": "number",
+      "label": "จำนวนคืนวันหยุด (ส.–อา.)",
+      "min": 0,
+      "max": 10,
+      "default": 0,
+      "help": ""
+    },
+    "adults": {
+      "kind": "number",
+      "label": "จำนวนผู้ใหญ่",
+      "min": 1,
+      "max": 10,
+      "default": 2,
+      "help": ""
+    }
+  },
+  "target": {
+    "1": "ลูกค้ายกเลิกการจอง",
+    "0": "ลูกค้ามาเข้าพักตามจอง"
+  },
+  "test_accuracy": 0.7923,
+  "cv_accuracy": 0.7719,
+  "baseline_all_features_cv": 0.7047,
+  "ga_cv": 0.7647,
+  "n_features_all": 72,
+  "n_features_ga": 16,
+  "n_features_model": 22,
+  "feature_importance": {
+    "lead_time": 0.225754,
+    "market_segment_Online TA": 0.190866,
+    "total_of_special_requests": 0.139121,
+    "adr": 0.091388,
+    "deposit_type_Non Refund": 0.087536,
+    "previous_cancellations": 0.070393,
+    "booking_changes": 0.051559,
+    "stays_in_week_nights": 0.032188,
+    "arrival_date_day_of_month": 0.019589,
+    "assigned_room_type_D": 0.016446,
+    "adults": 0.016183,
+    "reserved_room_type_D": 0.015047,
+    "stays_in_weekend_nights": 0.014056,
+    "market_segment_Corporate": 0.011375,
+    "arrival_date_month_July": 0.003911,
+    "arrival_date_month_December": 0.003418,
+    "assigned_room_type_F": 0.003046,
+    "assigned_room_type_B": 0.002778,
+    "arrival_date_month_May": 0.002706,
+    "customer_type_Group": 0.001096,
+    "assigned_room_type_H": 0.000982,
+    "distribution_channel_GDS": 0.000562
+  },
+  "n_rows": 87371,
+  "cancel_rate": 0.2749,
+  "holdout": {
+    "test_acc": 0.7923,
+    "precision": 0.7138,
+    "recall": 0.408,
+    "f1": 0.5192,
+    "cv3": 0.7719
+  },
+  "compare_note": "RF 100 ต้นไม่จำกัดความลึกได้ acc 0.7899/F1 0.551 แต่ไฟล์ 50 MB — ลดเป็น 60 ต้น depth 12 ทำให้ไฟล์ 1.8 MB และ acc ดีขึ้นเป็น 0.7923"
+}
